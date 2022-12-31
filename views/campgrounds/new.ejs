@@ -1,0 +1,49 @@
+<% layout('./layout/boilerplate') -%>
+    <h1>Create a new campground</h1>
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <form action="/campgrounds" method="POST" novalidate class="needs-validation">
+
+                <div class="mb-3">
+                    <p><label for="title">Title:</label></p>
+                    <input type="text" id="title" name="campground[title]" class="form-control">
+                    <div class="invalid-feedback">
+                        Please enter the camp title.
+                    </div>
+                </div>
+                <div class=" mb-3">
+                    <p><label for="location">Location:</label></p>
+                    <input type="text" id="location" name="campground[location]" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter the camp location.
+                    </div>
+                </div>
+                <div class=" mb-3">
+                    <p><label for="img">Image URL:</label></p>
+                    <input type="text" id="img" name="campground[img]" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please enter the camp img url.
+                    </div>
+                </div>
+                <p><label for="price">Price:</label></p>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" id="price" name="campground[price]" class="form-control" placeholder="0.000"
+                        required>
+                    <div class="invalid-feedback">
+                        Please enter the camp price.
+                    </div>
+                </div>
+                <div class=" mb-3">
+                    <p><label for="description">Description:</label></p>
+                    <textarea type="text" id="description" name="campground[description]" class="form-control"
+                        required></textarea>
+                    <div class="invalid-feedback">
+                        Please enter the camp description.
+                    </div>
+                </div>
+                <button class="btn btn-success mb-3">Create camp</button>
+            </form>
+        </div>
+        <a href="/campgrounds">Back to all camps</a>
+    </div>

@@ -1,0 +1,37 @@
+<% layout('./layout/boilerplate') -%>
+    <h1>Update the campground</h1>
+
+    <!-- old code -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <form action="/campgrounds/<%= camp._id %>/edit?_method=PUT " method="POST" novalidate
+                class="needs-validation">
+
+                <div class="mb-3">
+                    <p><label for="title">Title:</label></p>
+                    <input type="text" id="title" name="campground[title]" class="form-control"
+                        value="<%= camp.title %> " required>
+                </div>
+                <div class=" mb-3">
+                    <p><label for="location">Location:</label></p>
+                    <input type="text" id="location" name="campground[location]" class="form-control"
+                        value="<%= camp.location %> " required>
+                </div>
+
+                <p><label for="price">Price:</label></p>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" id="price" name="campground[price]" class="form-control" placeholder="0.000"
+                        value="<%= camp.price %> " required>
+                </div>
+                <div class=" mb-3">
+                    <p><label for="description">Description:</label></p>
+                    <textarea type="text" id="description" name="campground[description]" class="form-control" rows="4"
+                        required><%= camp.description %>  </textarea>
+                </div>
+                <button class="btn btn-success mb-3">Update camp</button>
+            </form>
+        </div>
+        <a href="/campgrounds/<%=camp._id%>">Back to all camps</a>
+    </div>
+    <!-- link -->

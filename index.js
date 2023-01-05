@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 const express = require("express");
 const app = express();
 const path = require('path');
@@ -15,6 +18,14 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local')
 const User = require('./models/user');
 var cookieParser = require('cookie-parser')
+const cloudinary = require('cloudinary').v2;
+
+
+
+
+
+// console.log(process.env.CLOUDINARY_KEY);
+
 
 const userRouter = require('./routers/user');
 

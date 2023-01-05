@@ -2,7 +2,7 @@
     <h1>Create a new campground</h1>
     <div class="row mb-5">
         <div class="col-md-6">
-            <form action="/campgrounds" method="POST" novalidate class="needs-validation">
+            <form action="/campgrounds" method="POST" novalidate class="needs-validation" enctype="multipart/form-data">
 
                 <div class="mb-3">
                     <p><label for="title">Title:</label></p>
@@ -18,12 +18,18 @@
                         Please enter the camp location.
                     </div>
                 </div>
+
                 <div class=" mb-3">
-                    <p><label for="img">Image URL:</label></p>
-                    <input type="text" id="img" name="campground[img]" class="form-control" required>
-                    <div class="invalid-feedback">
-                        Please enter the camp img url.
+                    <!--  -->
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="img" name="campground[images]" multiple>
+                        <div class="invalid-feedback">
+                            Please enter the camp img url.
+                        </div>
                     </div>
+                    <!--  -->
+
+
                 </div>
                 <p><label for="price">Price:</label></p>
                 <div class="input-group mb-3">

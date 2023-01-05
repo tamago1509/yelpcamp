@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const app = express();
 const cities = require('./cities');
@@ -25,7 +27,10 @@ const seedDB = async () => {
             author: "63adb32a5e0cfdf61892e451",
             location: `${cities[Ran1000].city}, ${cities[Ran1000].state}`,
             title: `${sample(descriptors)}, ${sample(places)}`,
-            img: "https://source.unsplash.com/featured/300x203",
+            images: {
+                url: 'https://source.unsplash.com/featured/300x203',
+                filename: "picture"
+            },
             description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, sequi libero iure dolor tempore repudiandae molestias assumenda quis architecto autem, saepe natus id sint ab iusto enim eum aliquid pariatur?",
             price
 

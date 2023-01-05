@@ -1,14 +1,24 @@
-// const Review = require("./rate");
+const Review = require("./rate");
 // const userSchema = require('./user');
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const imageSchema = new Schema({
+
+    url: String,
+    filename: String
+
+})
+
+imageSchema.virtual('thumbnail').get(function () {
+    return this.url.replace('/upload', '/upload/w_200')
+})
 const campSchema = new Schema({
     title:
     {
         type: String
     },
-    img: String
+    images: [imageSchema]
     ,
     price:
     {
